@@ -69,8 +69,9 @@ const PaginaAnterior = () => {
 
   .texto-pagina {
     font-size: 20px;
-    text-align: center
-    
+    text-align: center;
+    color: #34acb4;
+
   }
 
 </style>
