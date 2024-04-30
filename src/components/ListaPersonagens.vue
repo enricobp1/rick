@@ -9,10 +9,11 @@
             <img :src="personagens.imagem" alt="..." class="card-img-top">
             <div class="card-body">
                 <h3 class="card-title text-center">Name: <br>{{ personagens.nome }}</h3>
-                <h5 class="card-title text-center"> {{ personagens.status }} | {{ personagens.especie }}</h5>
-                
+                <h5 v-if="personagens.status == 'unknown'" class="card-title text-center"> Unknown | {{ personagens.especie }}</h5>
+                <h5 v-else class="card-title text-center"> {{ personagens.status }} | {{ personagens.especie }}</h5>
                 <h5 class="card-title text-center">Gender: {{ personagens.genero }}</h5>
-                <h5 class="card-title text-center">Actual Location: {{ personagens.localizacao }}</h5>
+                <h5 v-if="personagens.localizacao == 'unknown'" class="card-title text-center">Actual Location: Unknown</h5>
+                <h5 v-else class="card-title text-center">Actual Location: {{ personagens.localizacao }}</h5>
                 <h6 v-if="personagens.episodio == 1" class="card-title text-center">Appeared: {{ personagens.episodio }} Episode</h6>
                 <h6 v-else class="card-title text-center">Appeared: {{ personagens.episodio }} Episodes</h6>
             </div>
